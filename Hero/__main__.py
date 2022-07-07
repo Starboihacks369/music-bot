@@ -134,8 +134,8 @@ async def initiate_bot():
             console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
             return
         try:
-            await ASS_CLI_2.join_chat("ABOUT_BANNA_XD")
-            await ASS_CLI_2.join_chat("LOVE_BIRDS_123")
+            await ASS_CLI_2.join_chat("its_star_network")
+            await ASS_CLI_2.join_chat("Best_FriendsFor_Ever")
         except:
             pass
         console.print(f"├[red] ᴀssɪsᴛᴀɴᴛ 2 sᴛᴀʀᴛᴇᴅ ᴀs {ASSNAME2}")
@@ -153,8 +153,8 @@ async def initiate_bot():
             console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
             return
         try:
-            await ASS_CLI_3.join_chat("ABOUT_BANNA_XD")
-            await ASS_CLI_3.join_chat("LOVE_BIRDS_123")
+            await ASS_CLI_3.join_chat("its_star_network")
+            await ASS_CLI_3.join_chat("Best_FriendsFor_Ever")
         except:
             pass
         console.print(f"├[red] ᴀssɪsᴛᴀɴᴛ 3 sᴛᴀʀᴛᴇᴅ ᴀs {ASSNAME3}")
