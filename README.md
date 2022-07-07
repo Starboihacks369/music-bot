@@ -51,7 +51,7 @@
 
     <h4> ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴅᴇᴘʟᴏʏ sᴛᴀʀ ᴍᴜsɪᴄ ʙᴏᴛ ᴏɴ ʜᴇʀᴏᴋᴜ</h4>    
     
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://github.com/Starboihacks369/music-bot)</br>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Starboihacks369/music-bot)</br>
 
 
     
@@ -65,7 +65,7 @@
 
 ## ᴏʀɪɢɪɴᴀʟ ʀᴇᴘᴏ & sᴘᴇᴄɪᴀʟ ᴄʀᴇᴅɪᴛ
 
-[𝐒𝐓𝐀𝐑 𓆩🇽𓆪 𝐁𝐎𝐈°](https://github.com/Starboihacks369/music-bot) 
+[𝐒𝐓𝐀𝐑 𓆩🇽𓆪 𝐁𝐎𝐈°](https://github.com/Starboihacks369) 
 
 ## ᴀᴄᴋɴᴏᴡʟᴇᴅɢᴇᴍᴇɴᴛs
 
