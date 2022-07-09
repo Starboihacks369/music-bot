@@ -376,14 +376,42 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """ʜᴇʟʟᴏ {first_name},
-ɪ ᴀᴍ ᴀ ᴍᴜsɪᴄ ʙᴏᴛ, ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
-
-ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: `/`
-""".format(
-            first_name=name
-        ),
-        keyboard,
+await message.reply_sticker("CAACAgUAAxkBAAPLYqsvOXrTAjFEQ_JYoxVQO2LPkDMAAgkGAAKyxVhVulwgGjIafHUkBA")
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/336544dbebf58dadb1e6f.jpg",
+        caption=f"""**━━━━━━━━━━━━━━━━━━
+💔 ʜᴇʏ {message.from_user.mention()} !
+        ᴛʜɪs ɪs [{bn}](t.me/{bu}),  ɪ ᴀᴍ ᴀ ᴍᴜsɪᴄ ʙᴏᴛ, ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ....
+ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʜᴀɴᴅʟᴇʀs : ( `/` )
+┏━━━━━━━━━━━━━━┓
+┣★
+┣★ ᴍᴀᴅᴇ ʙʏ: [𝐒𝐓𝐀𝐑 𓆩🇽𓆪 𝐁𝐎𝐈](t.me/its_star_boi)
+┣★
+┗━━━━━━━━━━━━━━┛
+💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴀʙᴏᴜᴛ ᴍᴇ ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ_xᴅ](t.me/its_star_boi) ʙᴀʙʏ...
+━━━━━━━━━━━━━━━━━━**""",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🥺 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ​ 🥺", url=f"https://t.me/{bu}?startgroup=true"
+                       ),
+                  ],[
+                    InlineKeyboardButton(
+                        "❣️ ᴏᴡɴᴇʀ ❣️", url=f"https://t.me/{me}"
+                    ),
+                    InlineKeyboardButton(
+                        "💥 sᴜᴘᴘᴏʀᴛ 💥", url=f"https://t.me/Best_FriendsFor_Ever"
+                    )
+                ],[
+                    InlineKeyboardButton(
+                        "🌹ᴄʜᴀɴɴᴇʟ🌹", url="https://t.me/Its_star_network"
+                    ),
+                    InlineKeyboardButton(
+                        "😎 ᴅᴇᴠᴇʟᴏᴘᴇʀ 😎", url="https://t.me/its_star_boi"
+                    )]
+            ]
+       ),
     )
 
 
@@ -418,6 +446,9 @@ async def help_button(client, query):
         key = InlineKeyboardMarkup(
             [
                 [
+                    InlineKeyboardButton(
+                            text="❤ sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/Best_FriendsFor_Ever"
+                    ),
                     InlineKeyboardButton(
                         text="↪️ ʙᴀᴄᴋ", callback_data="help_back"
                     ),
