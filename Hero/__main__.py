@@ -345,7 +345,7 @@ async def start_command(_, message):
                 photo=thumbnail,
                 caption=searched_text,
                 parse_mode="markdown",
-                reply_markup=key,
+                reply_markup=key, 
             )
             if await is_on_off(5):
                 sender_id = message.from_user.id
@@ -375,7 +375,6 @@ async def start_command(_, message):
 async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-    return (
 await message.reply_sticker("CAACAgUAAxkBAAPLYqsvOXrTAjFEQ_JYoxVQO2LPkDMAAgkGAAKyxVhVulwgGjIafHUkBA")
     await message.reply_photo(
         photo=f"https://telegra.ph/file/336544dbebf58dadb1e6f.jpg",
