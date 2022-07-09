@@ -28,10 +28,16 @@ from Hero.Utilities.ping import get_readable_time
 
 __MODULE__ = "ᴇssᴇɴᴛɪᴀʟs"
 __HELP__ = """
+
+
 /start 
 - Start the Bot.
+
+
 /help 
 - Get Commands Helper Menu.
+
+
 /settings 
 - Get Settings button.
 """
