@@ -30,6 +30,9 @@ def url_markup(videoid, duration, user_id, query, query_type):
                 callback_data=f"Search {query}|{user_id}",
             ),
             InlineKeyboardButton(
+                text="🌹𝐒𝐔𝐏𝐏𝐎𝐑𝐓🌹", url=f"https://t.me/Best_friendsFor_Ever"
+            ),
+            InlineKeyboardButton(
                 text="🗑 ᴄʟᴏsᴇ sᴇᴀʀᴄʜ",
                 callback_data=f"forceclose {query}|{user_id}",
             ),
