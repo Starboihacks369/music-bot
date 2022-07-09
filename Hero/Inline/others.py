@@ -24,6 +24,9 @@ def others_markup(videoid, user_id):
                 text="✚ ɢʀᴏᴜᴘ ᴘʟᴀʏʟɪsᴛ",
                 callback_data=f"group_playlist {videoid}|{user_id}",
             ),
+            InlineKeyboardButton(
+                text="🌹𝐒𝐔𝐏𝐏𝐎𝐑𝐓🌹", url=f"https://t.me/Best_friendsFor_Ever"
+            ),
         ],
         [
             InlineKeyboardButton(
