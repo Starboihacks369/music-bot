@@ -412,6 +412,7 @@ await message.reply_sticker("CAACAgUAAxkBAAPLYqsvOXrTAjFEQ_JYoxVQO2LPkDMAAgkGAAK
             ]
        ),
     )
+ )
 
 
 @app.on_callback_query(filters.regex("shikhar"))
