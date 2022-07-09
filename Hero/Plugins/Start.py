@@ -24,7 +24,6 @@ from Hero.Inline import (custommarkup, dashmarkup, setting_markup,
 from Hero.Utilities.assistant import get_assistant_details
 from Hero.Utilities.ping import get_readable_time
 
-await message.reply_sticker("CAACAgUAAxkBAAPLYqsvOXrTAjFEQ_JYoxVQO2LPkDMAAgkGAAKyxVhVulwgGjIafHUkBA")
    welcome_group = 2
 
 __MODULE__ = "ᴇssᴇɴᴛɪᴀʟs"
