@@ -200,7 +200,7 @@ def search_markup2(
     return buttons
 
 
-def secondary_markup(videoid, user_id):
+def secondary_markup(videoid, user_id, chat_id):
     buttons = [
         [
             InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
@@ -208,13 +208,12 @@ def secondary_markup(videoid, user_id):
             InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
-        [
+          [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
-            )
-            ],
-            [
-          InlineKeyboardButton(
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
                 text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
             )
         ],
@@ -256,13 +255,12 @@ def primary_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
-        [
+          [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
-            )
-       ],
-       [
-          InlineKeyboardButton(
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
                 text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
             )
         ],
@@ -284,13 +282,12 @@ def timer_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
-        [
+          [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
-            )
-       ],
-       [
-          InlineKeyboardButton(
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
                 text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
             )
         ],
