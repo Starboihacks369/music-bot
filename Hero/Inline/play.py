@@ -74,6 +74,99 @@ def url_markup(videoid, duration, user_id, query, query_type, played, dur):
     ]
     return buttons
 
+def telegram_markup_timer(_, chat_id, played, dur):
+    played_sec = time_to_sec(played)
+    total_sec = time_to_sec(dur)
+
+    x, y = str(round(played_sec/total_sec,1)).split(".")
+    pos = int(y)
+
+    line = "—"
+    circle = "◉"
+
+    bar = line*(pos-1)
+    bar += circle
+    bar += line*(10-len(bar))
+    
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{played} •{bar}• {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            ),
+        ],
+    ]
+    return buttons
+
+
+## Inline without Timer Bar
+
+
+def stream_markup(_, videoid, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["S_B_3"],
+                url=f"https://t.me/Best_FriendsFor_Ever",
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
+        ],
+    ]
+    return buttons
+
+
+def telegram_markup(_, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            ),
+        ],
+    ]
+    return buttons
+
+
+## Search Query Inline
 
 def url_markup2(videoid, duration, user_id):
     buttons = [
@@ -233,55 +326,6 @@ def secondary_markup2(videoid, user_id):
     return buttons
 
 
-def primary_markup(videoid, user_id, current_time, total_time):
-    if videoid not in db_mem:
-        db_mem[videoid] = {}
-    db_mem[videoid]["check"] = 2
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
-            ),
-            InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
-        ],
-    ]
-    return buttons
-
-
-def timer_markup(videoid, user_id, current_time, total_time):
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
-            ),
-            InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
-        ],
-    ]
-    return buttons
 
 
 def audio_markup(videoid, user_id, current_time, total_time):
@@ -306,33 +350,96 @@ def audio_markup(videoid, user_id, current_time, total_time):
     return buttons
 
 
-def audio_timer_markup_start(videoid, user_id, current_time, total_time):
+def primary_markup(_, chat_id, played, dur):
+    played_sec = time_to_sec(played)
+    total_sec = time_to_sec(dur)
+
+    x, y = str(round(played_sec/total_sec,1)).split(".")
+    pos = int(y)
+
+    line = "—"
+    circle = "◉"
+
+    bar = line*(pos-1)
+    bar += circle
+    bar += line*(10-len(bar))
+    
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
+                text=f"{played} •{bar}• {dur}",
+                callback_data="GetTimer",
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
-        [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close")],
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            ),
+        ],
     ]
     return buttons
 
 
-audio_markup2 = InlineKeyboardMarkup(
-    [
+## Inline without Timer Bar
+
+
+def audio_markup2(_, videoid, chat_id):
+    buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
         ],
-        [InlineKeyboardButton("🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text=_["S_B_3"],
+                url=f"https://t.me/Best_FriendsFor_Ever",
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
+        ],
     ]
-)
+    return buttons
+
+
+def telegram_markup(_, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            ),
+        ],
+    ]
+    return buttons
+
+
+## Search Query Inline
