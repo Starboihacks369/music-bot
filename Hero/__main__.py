@@ -236,7 +236,7 @@ home_text_pm = f"""ʜᴇʟʟᴏ ,
 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: / """
 
 
-@app.on_message(filters.command(["help", "start"]) & filters.private)
+@app.on_message(filters.command(["mshelp", "msstart"]) & filters.private)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await app.send_message(message.chat.id, text, reply_markup=keyboard)
@@ -320,16 +320,11 @@ async def start_command(_, message):
 👀**ᴠɪᴇᴡs:** `{views}`
 ⏰**ᴘᴜʙʟɪsʜᴇᴅ ᴛɪᴍᴇ:** {published}
 🎥**ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ:** {channel}
-📎**ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ:** [Visit From Here]({channellink})
-🔗**ᴠɪᴅᴇᴏ ʟɪɴᴋ:** [Link]({link})
 
 ⚡️ __sᴇᴀʀᴄʜᴇᴅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}__"""
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="🎥 ᴡᴀᴛᴄʜ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ", url=f"{link}"
-                        ),
                         InlineKeyboardButton(
                             text="❤ sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/Best_FriendsFor_Ever"
                         ),
@@ -374,7 +369,7 @@ async def start_command(_, message):
 
 async def help_parser(name, keyboard=None):
     if not keyboard:
-        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
+        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "mahelp"))
     return (
         """ʜᴇʟʟᴏ {first_name},
 ɪ ᴀᴍ ᴀ ᴍᴜsɪᴄ ʙᴏᴛ, ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
@@ -393,14 +388,14 @@ async def shikhar(_, CallbackQuery):
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"help_(.*?)"))
+@app.on_callback_query(filters.regex(r"mshelp_(.*?)"))
 async def help_button(client, query):
-    home_match = re.match(r"help_home\((.+?)\)", query.data)
-    mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
-    next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
-    create_match = re.match(r"help_create", query.data)
+    home_match = re.match(r"mshelp_home\((.+?)\)", query.data)
+    mod_match = re.match(r"mshelp_module\((.+?)\)", query.data)
+    prev_match = re.match(r"mshelp_prev\((.+?)\)", query.data)
+    next_match = re.match(r"mshelp_next\((.+?)\)", query.data)
+    back_match = re.match(r"mshelp_back", query.data)
+    create_match = re.match(r"mshelp_create", query.data)
     top_text = f"""ʜᴇʟʟᴏ {query.from_user.first_name},
 
 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
