@@ -1,6 +1,9 @@
 from pyrogram.types import InlineKeyboardButton
 import config
+from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
+                            InlineKeyboardMarkup, InputMediaPhoto, Message)
 
+from Hero import db_mem
 
 ## After Edits with Timer Bar
 
