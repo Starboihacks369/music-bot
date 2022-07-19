@@ -30,15 +30,15 @@ __MODULE__ = "ᴇssᴇɴᴛɪᴀʟs"
 __HELP__ = """
 
 
-/start 
+/msstart 
 - Start the Bot.
 
 
-/help 
+/mshelp 
 - Get Commands Helper Menu.
 
 
-/settings 
+/mssettings 
 - Get Settings button.
 """
 
@@ -93,7 +93,7 @@ async def welcome(_, message: Message):
             return
 
 
-@app.on_message(filters.command(["help", "start"]) & filters.group)
+@app.on_message(filters.command(["mshelp", "msstart"]) & filters.group)
 async def useradd(_, message: Message):
     out = start_pannel()
     await asyncio.gather(
@@ -137,7 +137,7 @@ async def okaybhai(_, CallbackQuery):
     )
 
 
-@app.on_callback_query(filters.regex("settingm"))
+@app.on_callback_query(filters.regex("mssettingm"))
 async def settingm(_, CallbackQuery):
     await CallbackQuery.answer("Bot Settings ...")
     text, buttons = setting_markup()
