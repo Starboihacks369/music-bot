@@ -290,19 +290,12 @@ def primary_markup(videoid, user_id, current_time, total_time):
 
 
 def timer_markup(videoid, duration, user_id, query, query_type, played, dur):
-        played_sec = time_to_sec(played)
-    total_sec = time_to_sec(dur)
-
-    x, y = str(round(played_sec/total_sec,1)).split(".")
-    pos = int(y)
-
-    line = "—"
-    circle = "◉"
-
-    bar = line*(pos-1)
-    bar += circle
-    bar += line*(10-len(bar))
-    buttons = [
+          [
+            InlineKeyboardButton(
+                text=f"{current_time} ------------------ {total_time}",
+                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
+            )
+        ],
         [
             InlineKeyboardButton(
                 text="▷",
