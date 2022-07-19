@@ -210,9 +210,15 @@ def secondary_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
             InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+        ],
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
         ],
     ]
     return buttons
@@ -228,6 +234,11 @@ def secondary_markup2(videoid, user_id):
         ],
         [
             InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+        ],
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
         ],
     ]
     return buttons
@@ -252,9 +263,15 @@ def primary_markup(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
             InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+        ],
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
         ],
     ]
     return buttons
@@ -274,11 +291,19 @@ def timer_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
-        [
+            [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
+        ],
+        [
             InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+        ],
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
         ],
     ]
     return buttons
@@ -302,7 +327,12 @@ def audio_markup(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close")],
-    ]
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
+        ],
+   ]
     return buttons
 
 
@@ -321,7 +351,12 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close")],
-    ]
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
+        ],
+ ]
     return buttons
 
 
@@ -334,5 +369,10 @@ audio_markup2 = InlineKeyboardMarkup(
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton("🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data="close")],
-    ]
+        [
+          InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
+        ],
+  ]
 )
