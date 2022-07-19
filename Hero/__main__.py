@@ -369,11 +369,6 @@ async def start_command(_, message):
     return
 
 
-async def help_parser(name, keyboard=None):
-    if not keyboard:
-        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-await message.reply_sticker("CAACAgUAAxkBAAPLYqsvOXrTAjFEQ_JYoxVQO2LPkDMAAgkGAAKyxVhVulwgGjIafHUkBA")
- 
 
 @app.on_callback_query(filters.regex("shikhar"))
 async def shikhar(_, CallbackQuery):
