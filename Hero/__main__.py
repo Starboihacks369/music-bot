@@ -328,9 +328,6 @@ async def start_command(_, message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🎥 ᴡᴀᴛᴄʜ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ", url=f"{link}"
-                        ),
-                        InlineKeyboardButton(
                             text="❤ sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/Best_FriendsFor_Ever"
                         ),
                         InlineKeyboardButton(
@@ -376,40 +373,7 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
 await message.reply_sticker("CAACAgUAAxkBAAPLYqsvOXrTAjFEQ_JYoxVQO2LPkDMAAgkGAAKyxVhVulwgGjIafHUkBA")
-        caption=f"""**━━━━━━━━━━━━━━━━━━
-💔 ʜᴇʏ {message.from_user.mention()} !
-        ᴛʜɪs ɪs [{bn}](t.me/{bu}),  ɪ ᴀᴍ ᴀ ᴍᴜsɪᴄ ʙᴏᴛ, ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ....
-ᴀʟʟ ᴏꜰ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʜᴀɴᴅʟᴇʀs : ( `/` )
-┏━━━━━━━━━━━━━━┓
-┣★
-┣★ ᴍᴀᴅᴇ ʙʏ: [𝐒𝐓𝐀𝐑 𓆩🇽𓆪 𝐁𝐎𝐈](t.me/its_star_boi)
-┣★
-┗━━━━━━━━━━━━━━┛
-💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴀʙᴏᴜᴛ ᴍᴇ ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ_xᴅ](t.me/its_star_boi) ʙᴀʙʏ...
-━━━━━━━━━━━━━━━━━━**""",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🥺 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ​ 🥺", url=f"https://t.me/{bu}?startgroup=true"
-                       ),
-                  ],[
-                    InlineKeyboardButton(
-                        "❣️ ᴏᴡɴᴇʀ ❣️", url=f"https://t.me/{me}"
-                    ),
-                    InlineKeyboardButton(
-                        "💥 sᴜᴘᴘᴏʀᴛ 💥", url=f"https://t.me/Best_FriendsFor_Ever"
-                    )
-                ],[
-                    InlineKeyboardButton(
-                        "🌹ᴄʜᴀɴɴᴇʟ🌹", url="https://t.me/Its_star_network"
-                    ),
-                    InlineKeyboardButton(
-                        "😎 ᴅᴇᴠᴇʟᴏᴘᴇʀ 😎", url="https://t.me/its_star_boi"
-                    )]
-            ]
-       ),
-    )
+ 
 
 @app.on_callback_query(filters.regex("shikhar"))
 async def shikhar(_, CallbackQuery):
@@ -417,7 +381,7 @@ async def shikhar(_, CallbackQuery):
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"help_(.*?)"))
+@app.on_callback_query(filters.regex(r"mshelp_(.*?)"))
 async def help_button(client, query):
     home_match = re.match(r"help_home\((.+?)\)", query.data)
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
