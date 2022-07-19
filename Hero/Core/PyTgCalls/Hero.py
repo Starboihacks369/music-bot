@@ -17,7 +17,7 @@ from pytgcalls.types.input_stream.quality import (HighQualityAudio,
                                                   MediumQualityVideo)
 from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 
-from config import STRING1, STRING2, STRING3, STRING4, STRING5, get_queue
+from config import STRING1, STRING2, STRING3, STRING4, STRING5
 from Hero import (ASS_CLI_1, ASS_CLI_2, ASS_CLI_3, ASS_CLI_4, ASS_CLI_5,
                    MUSIC_BOT_NAME, app, db_mem)
 from Hero.Core.PyTgCalls import Queues
