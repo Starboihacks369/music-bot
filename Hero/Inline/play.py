@@ -200,31 +200,57 @@ def search_markup2(
     return buttons
 
 
-def secondary_markup(videoid, user_id):
+def secondary_markup(videoid, user_id, chat_id):
     buttons = [
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+         [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
         ],
     ]
     return buttons
 
 
-def secondary_markup2(videoid, user_id):
+def secondary_markup2(videoid, user_id, chat_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [
             InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
@@ -244,17 +270,34 @@ def primary_markup(videoid, user_id, current_time, total_time):
                 callback_data=f"timer_checkup_markup {videoid}|{user_id}",
             )
         ],
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+         [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
         ],
     ]
     return buttons
@@ -269,16 +312,33 @@ def timer_markup(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="🔗 ᴍᴏʀᴇ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"https://t.me/Best_FriendsFor_Ever"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
         ],
     ]
     return buttons
@@ -296,10 +356,19 @@ def audio_markup(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close")],
     ]
@@ -315,10 +384,19 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data=f"close")],
     ]
@@ -327,11 +405,20 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
 
 audio_markup2 = InlineKeyboardMarkup(
     [
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="II", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
+      [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
         ],
         [InlineKeyboardButton("🗑 ᴄʟᴏsᴇ ᴍᴇɴᴜ", callback_data="close")],
     ]
