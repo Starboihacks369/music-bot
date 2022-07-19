@@ -24,24 +24,7 @@ from Hero.Inline import (custommarkup, dashmarkup, setting_markup,
 from Hero.Utilities.assistant import get_assistant_details
 from Hero.Utilities.ping import get_readable_time
 
-   welcome_group = 2
-
-__MODULE__ = "ᴇssᴇɴᴛɪᴀʟs"
-__HELP__ = """
-
-
-/msstart 
-- Start the Bot.
-
-
-/mshelp 
-- Get Commands Helper Menu.
-
-
-/mssettings 
-- Get Settings button.
-"""
-
+   
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(_, message: Message):
