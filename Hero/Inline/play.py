@@ -375,7 +375,7 @@ def audio_markup(videoid, user_id, current_time, total_time):
     return buttons
 
 
-def audio_timer_markup_start(videoid, user_id, current_time, total_time):
+def audio_timer_markup_start(videoid, user_id, current_time, total_time, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
